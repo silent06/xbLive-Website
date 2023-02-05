@@ -1,0 +1,5 @@
+RewriteEngine On
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /var/www/html/xbLive/admin/.htpasswd
+Require valid-user
