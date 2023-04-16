@@ -321,7 +321,7 @@ if(isset($_GET['deleteclient']))
                                                 
                                                 </td>
                                                 <td>
-                                                <center>'. ($clients_row2['status'] == "1" ? "<label class = 'label label-success'>Enabled</label>" : "<label class = 'label label-danger'>Disabled</label>") .'</label></center>                                                                                      
+                                                <center>'. ($clients_row2['status'] == "0" ? "<label class = 'label label-success'>Enabled</label>" : "<label class = 'label label-danger'>Disabled</label>") .'</label></center>                                                                                      
                                                 </td>
 												<td>
                                                 '.$clients_row2['addedby'].'

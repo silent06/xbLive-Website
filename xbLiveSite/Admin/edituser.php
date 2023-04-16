@@ -176,9 +176,9 @@ if(!isset($_GET['id'])){
 					    <?php
 					    if(isset($_POST['statususer']))
 					    {
-					    	if($client_enabled == 0)
+					    	if($client_enabled == 1)
 					    	{
-					    		$enable = mysqli_query($con, "UPDATE `users` SET `status`='1' WHERE `cpu` = '$client_cpuk'");
+					    		$enable = mysqli_query($con, "UPDATE `users` SET `status`='0' WHERE `cpu` = '$client_cpuk'");
 					    		if($enable)
 					    		{
 					    			echo '<div class="row"><div class="col-md-12"><div class="alert alert-success">
@@ -195,9 +195,9 @@ if(!isset($_GET['id'])){
                                             </div></div></div>';
 					    		}
 					    	}
-					    	elseif($client_enabled == 1)
+					    	elseif($client_enabled == 0)
 					    	{
-					    		$disable = mysqli_query($con, "UPDATE `users` SET `status`='0' WHERE `cpu` = '$client_cpuk'");
+					    		$disable = mysqli_query($con, "UPDATE `users` SET `status`='1' WHERE `cpu` = '$client_cpuk'");
 
 					    		if($disable)
 					    		{
@@ -244,11 +244,11 @@ if(!isset($_GET['id'])){
 					                <button class="btn btn-success" name="upduser">Update</button>
 					                <button class="btn btn-danger" name="deleteuser">Delete</button>
 					                <?php
-					                if($client_enabled == 1)
+					                if($client_enabled == 0)
 					                {
 					                	echo '<button class="btn btn-warning" name="statususer">Disable</button>';
 					                }
-					                elseif($client_enabled == 0)
+					                elseif($client_enabled == 1)
 					                {
 					                	echo '<button class="btn btn-primary" name="statususer">Enable</button>';
 					                }
